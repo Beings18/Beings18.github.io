@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .div2{
+            text-align: center;
+            text-shadow: #000 0 0 1px;
+            font-size:22px;
+            font-family: "微软雅黑";
+            /* margin-top: 300px; */
+        }
+    </style>
+</head>
+<body onload="loadtime()">
+    <div class="div1">
+        <img src="./img/1.png" style="width: 100%;">
+    </div>
+    <div class="div2">
+        <label>当前时间是: </label>
+        <label id="timea">10月18日 17:59</label>
+    </div>
+    <script>
+         function loadtime(){
+            var myDate = new Date();
+            var mon = myDate.getMonth()+1;       //获取当前月份(0-11,0代表1月)
+            var day = myDate.getDate();        //获取当前日(1-31)
+            var hour = myDate.getHours();       //获取当前小时数(0-23)
+            var min = myDate.getMinutes();     //获取当前分钟数(0-59)
+
+            if( mon <10){
+                mon ="0" + mon;
+            }
+            if( day <10){
+                day ="0" + day;
+            }
+            if( hour <10){
+                hour ="0" + hour;
+            }
+            if( min <10){
+                min ="0" + min;
+            }
+            var timea = mon + "月" + day + "日 " +hour + ":"+min;
+
+            document.getElementById("timea").innerHTML = timea;
+        }
+    </script>
+</body>
+</html>
